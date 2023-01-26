@@ -1,17 +1,136 @@
 .login-container {
     display: flex;
-    justify-content: center;
-    height: 30%;
-    width: 30%;
-}
-
-.inputs-p {
-    display: flex;
     flex-direction: column;
     justify-content: center;
-    align-items: center;
+    padding: 2rem 5rem;
     background-color: blue;
-    height: 100%;
+    font-family: sans-serif;
+}
+
+.login-container h1 {
+    margin: 0;
+}
+
+.login-container button {
+    margin-top: 1.5rem;
+    font-size: 22px;
+    cursor: pointer;
+}
+
+.form1 {
     width: 100%;
-    border-radius: 7px;
+    height: 50px;
+    max-width: 400px;
+    position: relative;
+    overflow: hidden;
+}
+
+.form2 {
+    width: 100%;
+    height: 50px;
+    max-width: 400px;
+    position: relative;
+    overflow: hidden;
+}
+
+.form1 input {
+    width: 100%;
+    height: 100%;
+    background: none;
+    color: #ffff;
+    padding-top: 10px;
+    border: none;
+    outline: 0px;
+    font-size: 20px;
+}
+.form2 input {
+    width: 100%;
+    height: 100%;
+    background: none;
+    color: #ffff;
+    padding-top: 10px;
+    border: none;
+    outline: 0px;
+    font-size: 20px;
+}
+
+.form1 .lbl-username {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    border-bottom: 1px solid #c7c7c7;
+}
+
+.form2 .lbl-password {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    border-bottom: 1px solid #c7c7c7;
+}
+
+.form1 .lbl-username::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -1px;
+    width: 100%;
+    height: 100%;
+    border-bottom: 3px solid #2ecece;
+    transform: translateX(-100%);
+    transition: all 0.3s ease;
+}
+
+.form2 .lbl-password::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -1px;
+    width: 100%;
+    height: 100%;
+    border-bottom: 3px solid #2ecece;
+    transform: translateX(-100%);
+    transition: all 0.3s ease;
+}
+
+.text-nomb {
+    position: absolute;
+    bottom: 5px;
+    left: 0;
+    transition: all 0.3s ease;
+    color: #fff;
+    font-size: 20px;
+}
+
+.text-password {
+    position: absolute;
+    bottom: 5px;
+    left: 0;
+    transition: all 0.3s ease;
+    color: #fff;
+    font-size: 20px;
+}
+
+.form1 input:focus + .lbl-username .text-nomb,
+.form1 input:valid + .lbl-username .text-nomb {
+    transform: translateY(-150%);
+    font-size: 14px;
+    color: #2ecece;
+}
+
+.form2 input:focus + .lbl-password .text-password,
+.form2 input:valid + .lbl-password .text-password {
+    transform: translateY(-150%);
+    font-size: 14px;
+    color: #2ecece;
+}
+
+.form2 input:focus + .lbl-password:after,
+.form2 input:valid + .lbl-password:after {
+    transform: translateX(0%);
 }
